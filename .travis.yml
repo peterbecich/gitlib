@@ -11,6 +11,8 @@ env:
     - GHCVERSION=ghc802
     - GHCVERSION=ghc822
     - GHCVERSION=ghc843
+    - GHCVERSION=ghc865
+    - GHCVERSION=ghc884
 
 matrix:
   allow_failures:
@@ -19,6 +21,6 @@ matrix:
 script:
   - (cd gitlib ; nix-build --argstr compiler $GHCVERSION)
 
-branches:
-  only:
-    - master
+# branches:
+#   only:
+#     - master
